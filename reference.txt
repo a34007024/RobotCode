@@ -10,5 +10,12 @@ https://www.instructables.com/id/Tower-Pro-SG-90-Micro-Servo-Hack/#step1
 Arduino 筆記 – Lab16 使用可變電阻控制伺服馬達
 http://coopermaa2nd.blogspot.com/2011/01/arduino-lab16.html
 
-Arduino 官網文件--Servo library
+Arduino官網文件--Servo library
 https://www.arduino.cc/en/reference/servo
+
+Arduino Project ] Hungry Robot | Servo,Sensor,3d printer Arm project tutorial example
+https://www.youtube.com/watch?time_continue=333&v=KfP_LfUiwdc
+
+Arduino官網--Knob可變電阻控制伺服馬達
+https://www.arduino.cc/en/Tutorial/Knob
+

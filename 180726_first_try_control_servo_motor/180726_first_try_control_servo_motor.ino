@@ -1,8 +1,8 @@
 //參考自:http://yehnan.blogspot.com/2013/09/arduinotower-pro-sg90.html
 #include <Servo.h> 
 Servo myservo;
-int moverange = 100;//一步的旋轉範圍，數值越大轉越大
-int movespeed = 300;//每走一步的延遲時間，數值越小轉越快
+int moverange = 200;//一步的旋轉範圍，數值越大轉越大
+int movespeed = 100;//每走一步的延遲時間，數值越小轉越快
 void setup() 
 { 
   myservo.attach(9, 500, 2400); //馬達控制接腳接在9號Pin腳
