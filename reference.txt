@@ -1,0 +1,14 @@
+Arduino練習：伺服馬達以Tower Pro SG90為例
+http://yehnan.blogspot.com/2013/09/arduinotower-pro-sg90.html
+
+Arduino筆記(15)：控制伺服馬達 Servo
+http://atceiling.blogspot.com/2017/03/arduino.html
+
+TOWER PRO SG 90 MICRO SERVO HACK
+https://www.instructables.com/id/Tower-Pro-SG-90-Micro-Servo-Hack/#step1
+
+Arduino 筆記 – Lab16 使用可變電阻控制伺服馬達
+http://coopermaa2nd.blogspot.com/2011/01/arduino-lab16.html
+
+Arduino 官網文件--Servo library
+https://www.arduino.cc/en/reference/servo
