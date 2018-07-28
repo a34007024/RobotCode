@@ -19,3 +19,8 @@ https://www.youtube.com/watch?time_continue=333&v=KfP_LfUiwdc
 Arduino官網--Knob可變電阻控制伺服馬達
 https://www.arduino.cc/en/Tutorial/Knob
 
+Arduino官網--檢查伺服馬達是否連接
+https://www.arduino.cc/en/Reference/ServoAttached
+
+MG996R的脈波寬度範圍
+http://seller.pcstore.com.tw/S164966951/C1148607762.htm
