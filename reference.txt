@@ -24,3 +24,9 @@ https://www.arduino.cc/en/Reference/ServoAttached
 
 MG996R的脈波寬度範圍
 http://seller.pcstore.com.tw/S164966951/C1148607762.htm
+
+//------------------------------------------
+尚未仔細閱讀
+http://nhs-tw.blogspot.com/2015/11/step-by-step-esp8266-12-with-arduino.html
+
+https://www.esp8266.com/viewtopic.php?p=33273

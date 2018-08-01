@@ -23,7 +23,7 @@ void sendHTML(){
   client.println("<a href=\"/Servo2_angle0\"\"><button style=\"height:200px;width:200px\">2號馬達轉至0度</button></a><br /><br /><br />");  
   client.println("<a href=\"/Servo2_angle90\"\"><button style=\"height:200px;width:200px\">2號馬達轉至90度</button></a><br />");  
   client.println("<a href=\"/Servo2_angle180\"\"><button style=\"height:200px;width:200px\">2號馬達轉至180度</button></a><br />");  
-  //上面繫行看起來很怪，但是為了讓IDE把它當成純文字看，只好用一堆\" 這樣IDE才會將它視為"  
+  //上面幾行看起來很怪，但是為了讓IDE把它當成純文字看，只好用一堆\" 這樣IDE才會將它視為"  
   client.println("</html>");
   delay(1);  
 }

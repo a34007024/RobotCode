@@ -76,7 +76,7 @@ void loop() {
   }
   // Set testLEDPin according to the request
   //digitalWrite(testLEDPin, value);
-  if(request.indexOf("/c") != -1)  {
+  if(request.indexOf("/Servo1_angle90") != -1)  {
     Servo1.write(90);
   }
   if(request.indexOf("/Servo1_angle0") != -1)  {
