@@ -1,3 +1,20 @@
+Esp8266 github 很實用的文件
+https://github.com/esp8266/Arduino/tree/master/libraries
+裡面有許多Esp8266的Examples
+
+Arduino 官網 Wifi library的class及method解說
+https://www.arduino.cc/en/Reference/WiFi
+
+Esp8266 github.io 上對於Wifi.mode()及其他語法說明
+http://esp8266.github.io/Arduino/versions/2.3.0/doc/libraries.html#wifi-esp8266wifi-library
+
+以下三個，這就是我想要做出的功能!!!頗有參考價值!
+https://www.roboremo.com/esp8266-servo.html
+https://circuitdigest.com/microcontroller-projects/iot-web-controlled-servo-motor
+https://electrosome.com/arduino-web-controlled-servo/
+
+//===============以上為開發過程中重要的reference=================
+
 Arduino練習：伺服馬達以Tower Pro SG90為例
 http://yehnan.blogspot.com/2013/09/arduinotower-pro-sg90.html
 

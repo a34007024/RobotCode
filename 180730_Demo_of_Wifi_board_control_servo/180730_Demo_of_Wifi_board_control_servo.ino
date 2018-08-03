@@ -12,8 +12,8 @@ WiFiClient client;
 void setup() {
   pinMode(testLEDPin,OUTPUT);
   digitalWrite(testLEDPin,LOW);
-  Servo1.attach(2,500,2500);//pin2 = D4
-  Servo2.attach(4,500,2500);//pin4 = D2
+  Servo1.attach(2,1000,2150);//pin2 = D4
+  Servo2.attach(4,1000,2150);//pin4 = D2
   Servo1.write(0);Servo2.write(0);delay(3000);
   Servo1.write(180);Servo2.write(180);delay(3000);
   Servo1.write(90);Servo2.write(90);

@@ -1,3 +1,5 @@
+/*下一步從client class 與server class 著手
+ 以及從範例裡去找相關的傳輸資料的方法*/
 #include <ESP8266WiFi.h>
 #include <Servo.h>
 const char* ssid = "Infas_因法師"; //your WiFi Name
@@ -6,11 +8,12 @@ Servo Servo1;
 Servo Servo2;
 WiFiServer server(80);
 WiFiClient client;
+int servo1Angle = 30;
 String request;
 //===========================================
 void setup() {
-  Servo1.attach(2,500,2500);//pin2 = D4
-  Servo2.attach(4,500,2500);//pin4 = D2
+  Servo1.attach(2,1000,2150);//pin2 = D4
+  Servo2.attach(4,1000,2150);//pin4 = D2
   Servo1.write(0);Servo2.write(0);delay(3000);
   Servo1.write(180);Servo2.write(180);delay(3000);
   Servo1.write(90);Servo2.write(90);

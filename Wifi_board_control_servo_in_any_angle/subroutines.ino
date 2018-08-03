@@ -56,12 +56,12 @@ void sendHTML(){
   client.println("<br><br>");
   client.println("<a href=\"/LED=ON\"\"><button>On </button></a>");
   client.println("<a href=\"/LED=OFF\"\"><button>Off </button></a><br />");  
-  client.println("<a href=\"/Servo1_angle0\"\"><button style=\"height:200px;width:200px\">1號馬達轉至0度</button></a><br /><br /><br />");  
-  client.println("<a href=\"/Servo1_angle90\"\"><button style=\"height:200px;width:200px\">1號馬達轉至90度</button></a><br />");  
-  client.println("<a href=\"/Servo1_angle180\"\"><button style=\"height:200px;width:200px\">1號馬達轉至180度</button></a><br />");  
-  client.println("<a href=\"/Servo2_angle0\"\"><button style=\"height:200px;width:200px\">2號馬達轉至0度</button></a><br /><br /><br />");  
-  client.println("<a href=\"/Servo2_angle90\"\"><button style=\"height:200px;width:200px\">2號馬達轉至90度</button></a><br />");  
-  client.println("<a href=\"/Servo2_angle180\"\"><button style=\"height:200px;width:200px\">2號馬達轉至180度</button></a><br />");  
+  client.println("<a href=\"/Servo1_angle0\"\"><button style=\"height:200px;width:200px\">Servo1 set to 0°</button></a><br /><br /><br />");  
+  client.println("<a href=\"/Servo1_angle90\"\"><button style=\"height:200px;width:200px\">Servo1 set to 90°</button></a><br />");  
+  client.println("<a href=\"/Servo1_angle180\"\"><button style=\"height:200px;width:200px\">Servo1 set to 180°</button></a><br />");  
+  client.println("<a href=\"/Servo2_angle0\"\"><button style=\"height:200px;width:200px\">Servo2 set to 0°</button></a><br /><br /><br />");  
+  client.println("<a href=\"/Servo2_angle90\"\"><button style=\"height:200px;width:200px\">Servo2 set to 90°</button></a><br />");  
+  client.println("<a href=\"/Servo2_angle180\"\"><button style=\"height:200px;width:200px\">Servo2 set to 180°</button></a><br />");  
   //上面幾行看起來很怪，但是為了讓IDE把它當成純文字看，只好用一堆\" 這樣IDE才會將它視為"  
   client.println("</html>");
   delay(1);
