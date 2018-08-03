@@ -1,0 +1,30 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title>Web controlled Servo</title>
+<script src="jquery.js"></script>
+</head>
+<body>
+<h1> <b> Web Controlled Servo by circuitdigest.com </b> </h1>
+<h4> <b> Enter the IP address of esp8266 shown in the serial monitor below </b> </h4>
+<div style="margin: 0; width:500px; height:80px;">
+	<FORM NAME="form" ACTION="" METHOD="GET">
+		ESP8266 IP Address:
+		<INPUT TYPE="text" NAME="inputbox" VALUE="192.168.0.9">
+	</FORM>
+</div>
+<h3> Scroll it to move servo 1 </h3>
+<input type="range" min="20" max="170" onmouseup="servo1(this.value)" />
+</body>
+
+<script>
+$.ajaxSetup({timeout:1000});
+function servo1(angle)
+{
+	TextVar = form.inputbox.value;
+	ArduinoVar = "http://" + TextVar + ":80";
+	$.get( ArduinoVar, { "sr1": angle })	;
+	{Connection: close};
+}
+</script>
+</html>
