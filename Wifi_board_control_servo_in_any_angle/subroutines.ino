@@ -54,8 +54,7 @@ void sendHTML(){
   //-------------以上為HTML Header----------------
   client.print("Led is now: This example does not have LED");
   client.println("<br><br>");
-  client.println("<a href=\"/LED=ON\"\"><button>On </button></a>");
-  client.println("<a href=\"/LED=OFF\"\"><button>Off </button></a><br />");  
+  client.println("<input type=\"submit\" value=\"submit\" />");
   client.println("<a href=\"/Servo1_angle0\"\"><button style=\"height:200px;width:200px\">Servo1 set to 0°</button></a><br /><br /><br />");  
   client.println("<a href=\"/Servo1_angle90\"\"><button style=\"height:200px;width:200px\">Servo1 set to 90°</button></a><br />");  
   client.println("<a href=\"/Servo1_angle180\"\"><button style=\"height:200px;width:200px\">Servo1 set to 180°</button></a><br />");  

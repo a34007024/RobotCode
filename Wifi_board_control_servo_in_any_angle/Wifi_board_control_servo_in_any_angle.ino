@@ -12,6 +12,7 @@ int servo1Angle = 30;
 String request;
 //===========================================
 void setup() {
+  Serial.begin(115200);
   Servo1.attach(2,1000,2150);//pin2 = D4
   Servo2.attach(4,1000,2150);//pin4 = D2
   Servo1.write(0);Servo2.write(0);delay(3000);
@@ -25,7 +26,7 @@ void setup() {
 void loop() {
   while (WiFi.status() != WL_CONNECTED) {//如果斷線
     delay(100);
-    Serial.print("Lost Connection! Trying to reconnect...");
+    Serial.println("Lost Connection! Trying to reconnect...");
     //若要在斷線時重置接腳的輸出狀態
     //要寫在這裡面
   }//這邊以上非常重要!!!防止WIFI斷線導致無法控制!

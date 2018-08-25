@@ -2,6 +2,16 @@ Esp8266 github 很實用的文件
 https://github.com/esp8266/Arduino/tree/master/libraries
 裡面有許多Esp8266的Examples
 
+關於機器人聲控
+有人利用AppInventor+NodeMCU做出了聲控遙控車
+https://www.instructables.com/id/WiFi-Voice-Controlled-Robot-With-NodeMCU/
+
+nodemcu 官方github
+https://github.com/nodemcu/nodemcu-firmware
+
+關於AT command 及 Nodemcu lua 及其固件說明
+https://blog.csdn.net/Little_Body/article/details/78034034
+
 Arduino 官網 Wifi library的class及method解說
 https://www.arduino.cc/en/Reference/WiFi
 
