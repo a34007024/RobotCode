@@ -1,4 +1,5 @@
 char incomingByte;   // for incoming serial data
+String stringIn;
 void setup() {
   Serial1.begin(115200);//與NodeMCU的通訊橋梁
   Serial.begin(115200);//與電腦的通訊橋梁
@@ -13,12 +14,15 @@ TX  ->  TX1
 void loop() {
   if(Serial1.available()){//如果Serial 1有送訊號出來
     incomingByte = Serial1.read();//讀取Serial 1接收到的資料
+    if(incomingByte != "\r" && stringIn.length() < 15){
+      stringIn += incomingByte;
+    }
+    else {
+      stringIn = "";
+    }
     //Serial.println("I have received some data from NodeNCU");
-    // say what you got:
-    //Serial.print("I received: ");
-    Serial.print(incomingByte);
+    Serial.print(incomingByte);// say what you got
+    Serial.println("stringIn now is:"+stringIn);
   }
 }
-
-
 
