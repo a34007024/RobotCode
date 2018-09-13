@@ -5,7 +5,7 @@ void setup() {
   Serial.begin(115200);//與電腦的通訊橋梁
   Serial.println("Testing the connection with computer...");
 }
-/*接線說明(左側為NodeMCU,右側為Mega)
+/*接線說明(左側為NodeMCU,右側為Mega大陸版)
 G   ->  GND
 VIN ->  5V
 RX  ->  RX1
@@ -22,7 +22,6 @@ void loop() {
     }
     //Serial.println("I have received some data from NodeNCU");
     Serial.print(incomingByte);// say what you got
-    Serial.println("stringIn now is:"+stringIn);
+    //Serial.println("stringIn now is:"+stringIn);
   }
 }
-

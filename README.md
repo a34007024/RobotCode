@@ -1,9 +1,10 @@
 # RobotCode
 # 高三專題的程式碼存放區
+# Arduiono IDE esp8266的套件
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 # start working in 【MainProject】 folder
 # SoftwareSerial不如內建Serial快速，容易丟失字元
-Not Needed at all => NodeMCU 與 Arduino 通訊:利用SoftwareSerial()
 
 # 網路上說藍芽與ESP8266模組與板子的RX TX 要交錯接
 RX -> TX    TX -> RX
