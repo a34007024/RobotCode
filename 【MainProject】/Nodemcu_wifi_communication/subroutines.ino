@@ -40,15 +40,15 @@ void sendHTML(){
   client.print("Led is now: This example does not have LED");
   client.println("<br><br>");
   client.println("<input type=\"submit\" value=\"submit\" />");
-  client.println("<a href=\"/Servo1_angle0\"\"><button style=\"height:200px;width:200px\">Servo1 set to 0°</button></a><br /><br /><br />");  
-  client.println("<a href=\"/Servo1_angle90\"\"><button style=\"height:200px;width:200px\">Servo1 set to 90°</button></a><br />");  
-  client.println("<a href=\"/Servo1_angle180\"\"><button style=\"height:200px;width:200px\">Servo1 set to 180°</button></a><br />");  
-  client.println("<a href=\"/Servo2_angle0\"\"><button style=\"height:200px;width:200px\">Servo2 set to 0°</button></a><br /><br /><br />");  
-  client.println("<a href=\"/Servo2_angle90\"\"><button style=\"height:200px;width:200px\">Servo2 set to 90°</button></a><br />");  
-  client.println("<a href=\"/Servo2_angle180\"\"><button style=\"height:200px;width:200px\">Servo2 set to 180°</button></a><br />");  
-  //上面幾行看起來很怪，但是為了讓IDE把它當成純文字看，只好用一堆\" 這樣IDE才會將它視為"  
+  client.println("<a href=\"/$Servo01_angle000.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 0°</button></a><br /><br /><br />");  
+  client.println("<a href=\"/$Servo01_angle090.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 90°</button></a><br />");  
+  client.println("<a href=\"/$Servo01_angle180.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 180°</button></a><br />");  
+  client.println("<a href=\"/$Servo02_angle000.\"\"><button style=\"height:200px;width:200px\">Servo2 set to 0°</button></a><br /><br /><br />");  
+  client.println("<a href=\"/$Servo02_angle090.\"\"><button style=\"height:200px;width:200px\">Servo2 set to 90°</button></a><br />");  
+  client.println("<a href=\"/$Servo02_angle180.\"\"><button style=\"height:200px;width:200px\">Servo2 set to 180°</button></a><br />");  
+  //上面幾行看起來很怪，但是為了讓IDE把它當成純文字看，只好用一堆\" 這樣IDE才會將它視為" 
+  //請求的路徑規定為 $表示開始 .表示結尾且每筆請求的長度都要一樣
+  //這樣在ArduinoMega上的字串處理會比較方便
   client.println("</html>");
   delay(1);
 }
-
-

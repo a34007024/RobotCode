@@ -1,5 +1,6 @@
 char incomingByte;   // for incoming serial data
 String stringIn;
+bool commandInStatus = false;
 void setup() {
   Serial1.begin(115200);//與NodeMCU的通訊橋梁
   Serial.begin(115200);//與電腦的通訊橋梁
@@ -14,14 +15,14 @@ TX  ->  TX1
 void loop() {
   if(Serial1.available()){//如果Serial 1有送訊號出來
     incomingByte = Serial1.read();//讀取Serial 1接收到的資料
-    if(incomingByte != "\r" && stringIn.length() < 15){
-      stringIn += incomingByte;
+    if(incomingByte == '$'){
+      //use '' because the dataType of incomingByte is char
+      //don't be foolish again xD! QwQ我好傻一開始竟然用""難怪沒反應
+      commandInStatus = true;
+      stringIn = Serial1.readStringUntil('.');
     }
-    else {
-      stringIn = "";
-    }
-    //Serial.println("I have received some data from NodeNCU");
-    Serial.print(incomingByte);// say what you got
-    //Serial.println("stringIn now is:"+stringIn);
   }
+  //if(commandInStatus == true) stringIn += incomingByte;
+  if(stringIn != "")
+    Serial.println("stringIn now is:"+stringIn);
 }
