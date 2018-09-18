@@ -11,6 +11,12 @@ void setup() {
   for (int i = 0; i < 20; i++) {
     commandCache[i] = "";//初始化指令陣列
   }
+  for(int i=0;i<15;i++){
+    if(i==0)servo[i].attach(44,1000,2150);
+    else if(i==1)servo[i].attach(45,1000,2150);
+    else if(i==14)servo[i].attach(46,1000,2150);
+    else servo[i].attach(i,1000,2150);
+  }//伺服馬達Pin腳接線
 }
 //======================================================
 void loop() {
