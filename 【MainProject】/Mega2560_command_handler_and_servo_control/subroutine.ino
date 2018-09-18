@@ -15,7 +15,17 @@ void communicateWithNodeMCU() {
     }
   }
 }
-
+void commandToServoInfo(){
+  for(int i=0;i<20;i++){
+    if(commandCache[i] != ""){
+      //繼續編輯此處
+      //把指令的馬達編號及角度解析並儲存到陣列裡
+    }
+  }
+}
+void servoMove(){
+  
+}
 void debug() {
   for (int i = 0; i < 20; i++) {
     if (commandCache[i] != "") {

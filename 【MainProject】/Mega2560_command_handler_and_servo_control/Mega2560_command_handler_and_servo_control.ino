@@ -2,6 +2,7 @@
 char incomingByte;   // for incoming serial data
 String stringIn;
 String commandCache[20];
+int servoAngle[15];
 Servo servo[15];
 //======================================================
 void setup() {
@@ -22,6 +23,8 @@ void setup() {
 void loop() {
   communicateWithNodeMCU();//-----------與Wifi通訊區塊-----------
   debug();
+  commandToServoInfo();
+  servoMove();
 }
 //======================================================
 /*接線說明(左側為NodeMCU,右側為Mega大陸版)
