@@ -2,6 +2,7 @@
 char incomingByte;   // for incoming serial data
 String stringIn;
 String commandCache[20];
+Servo servo[15];
 //======================================================
 void setup() {
   Serial1.begin(115200);//與NodeMCU的通訊橋梁
