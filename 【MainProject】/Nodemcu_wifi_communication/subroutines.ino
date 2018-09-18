@@ -40,11 +40,10 @@ void sendHTML(){
   client.print("Led is now: This example does not have LED");
   client.println("<br><br>");
   client.println("<input type=\"submit\" value=\"submit\" />");
+  client.println("<a href=\"/$Servo02_angle180.$Servo03_angle150.$Servo05_angle080.$Servo06_angle020.$Servo07_angle180.$Servo08_angle180.$Servo09_angle180.$Servo10_angle180.$Servo11_angle180.$Servo12_angle180.$Servo13_angle180.\"\"><button style=\"height:200px;width:200px\">complex command test</button></a><br />");  
   client.println("<a href=\"/$Servo01_angle000.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 0°</button></a><br /><br /><br />");  
-  client.println("<a href=\"/$Servo01_angle090.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 90°</button></a><br />");  
   client.println("<a href=\"/$Servo01_angle180.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 180°</button></a><br />");  
-  client.println("<a href=\"/$Servo02_angle000.\"\"><button style=\"height:200px;width:200px\">Servo2 set to 0°</button></a><br /><br /><br />");  
-  client.println("<a href=\"/$Servo02_angle090.\"\"><button style=\"height:200px;width:200px\">Servo2 set to 90°</button></a><br />");  
+  client.println("<a href=\"/$Servo02_angle000.\"\"><button style=\"height:200px;width:200px\">Servo2 set to 0°</button></a><br /><br /><br />");   
   client.println("<a href=\"/$Servo02_angle180.\"\"><button style=\"height:200px;width:200px\">Servo2 set to 180°</button></a><br />");  
   //上面幾行看起來很怪，但是為了讓IDE把它當成純文字看，只好用一堆\" 這樣IDE才會將它視為" 
   //請求的路徑規定為 $表示開始 .表示結尾且每筆請求的長度都要一樣
