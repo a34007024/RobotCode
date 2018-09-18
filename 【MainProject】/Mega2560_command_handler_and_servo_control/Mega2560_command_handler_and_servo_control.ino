@@ -1,6 +1,8 @@
+#include <Servo.h>
 char incomingByte;   // for incoming serial data
 String stringIn;
 String commandCache[20];
+//======================================================
 void setup() {
   Serial1.begin(115200);//與NodeMCU的通訊橋梁
   Serial.begin(115200);//與電腦的通訊橋梁
@@ -9,13 +11,16 @@ void setup() {
     commandCache[i] = "";//初始化指令陣列
   }
 }
+//======================================================
 /*接線說明(左側為NodeMCU,右側為Mega大陸版)
 G   ->  GND
 VIN ->  5V
 RX  ->  RX1
 TX  ->  TX1
 */
+//======================================================
 void loop() {
+  //-----------與Wifi通訊區塊-----------
   if(Serial1.available()){//如果Serial 1有送訊號出來
     incomingByte = Serial1.read();//讀取Serial 1接收到的資料
     if(incomingByte == '$'){
@@ -24,6 +29,8 @@ void loop() {
       stringIn = Serial1.readStringUntil('.');
     }
   }
+  //-----------與Wifi通訊區塊-----------
+  //===========指令字串處理區塊============
   if(stringIn != ""){
     Serial.println("stringIn now is:"+stringIn);
     for(int i=0;i<20;i++){
@@ -33,4 +40,5 @@ void loop() {
       }
     }
   }
+  //===========指令字串處理區塊============
 }
