@@ -25,3 +25,9 @@ RX -> TX    TX -> RX
 + VIN ->  5V
 + RX  ->  TX1
 + TX  ->  RX1
+
+# 合成指令規則說明:
+/$Servo02_angle000.$Servo01_angle080.$Servo03_angle050
+指令從$開始讀到.為完整的一串指令
+剛開始出現 / 是因為WIFI板會把請求的連結丟出來
+所以之後APP指令的合成就是依照這個規則
