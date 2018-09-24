@@ -28,14 +28,11 @@ void loop() {
   }
   // Wait until the client sends some data
   Serial.println("new client");
-  int receiveDataWaitTimes=0;//用來計算等待接收資料的次數
   while(!client.available()){
-    delay(30);//如果Client還來不及做出回應(送資料)，等待他30毫秒
-    receiveDataWaitTimes+=1;
-    if(receiveDataWaitTimes>=10){
-      receiveDataWaitTimes=0;
-      break;//因為Client一直都沒做出回應，可能是斷線了，所以就不等了，跳出迴圈!
-    }
+    delay(1);
+    //這筆修改是根據:範例 -> ESP8266Wifi -> WifiWebServer
+    //以及http://www.instructables.com/id/Getting-Started-With-ESP8266LiLon-NodeMCU-V3Flashi/
+    //來進行修改的
   }
   request = client.readStringUntil('\r');// Read the request
   //讀取Client的回應直到換行符號出現
