@@ -1,5 +1,8 @@
-*重要*NodeMcu和Arduino的通訊請參考藍芽的通訊方式
-利用SoftwareSerial(rxPin, txPin, inverse_logic)
+# 重要: arduino字串處理function
+https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+參考此頁底下的Fuctions項目
+有很多的string.fuction可以使用!
+
 https://www.arduino.cc/en/Reference/SoftwareSerial
 
 藍芽自走車:
