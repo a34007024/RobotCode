@@ -24,13 +24,28 @@ void commandToServoInfo(){
   }
 }
 void servoMove(){
-  
+  for(int i=0;i<15;i++){
+    /*Servo02_angle000這樣為一個符合規範的組合指令
+     * 字串的長度為16
+     * 而已訂好的指令都規定為(Mega板上已寫好的預設功能)
+     * command001、command002......字串長度為10
+     */
+    if(commandCache[i].length() == 16){//組合指令
+      
+    }
+    else if(commamdCache[i]){//內建好的動作
+      
+    }
+    else commandCache[i] = "";
+    //可能在傳輸中出錯而不符合規定的指令，直接丟棄
+  }
 }
 void debug() {
   for (int i = 0; i < 20; i++) {
     if (commandCache[i] != "") {
       Serial.println(commandCache[i]);
       commandCache[i] = "";
+      Serial.print(commandCache[i].length());//輸出字串長度
     }
   }
 }
