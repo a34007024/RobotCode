@@ -15,15 +15,11 @@ void communicateWithNodeMCU() {
     }
   }
 }
-void commandToServoInfo(){
-  for(int i=0;i<20;i++){
-    if(commandCache[i] != ""){
-      //繼續編輯此處
-      //把指令的馬達編號及角度解析並儲存到陣列裡
-    }
-  }
-}
+
 void servoMove(){
+  String stringProcessCache;
+  int servoNum = 0;
+  int servoAngle = 0;
   for(int i=0;i<15;i++){
     /*Servo02_angle000這樣為一個符合規範的組合指令
      * 字串的長度為16
@@ -31,21 +27,31 @@ void servoMove(){
      * command001、command002......字串長度為10
      */
     if(commandCache[i].length() == 16){//組合指令
-      
+      stringProcessCache = commandCache[i];
+      //字串是char array第一個字元為char[0]
+      stringProcessCache.remove(0,5);//從第0格開始，共去除5個字元
+      stringProcessCache.remove(2,9);//從第2格開始，共去除9個字元
+      servoNum = stringProcessCache.toInt();
+      Serial.println(servoNum);
+      commandCache[i].remove(0,13);
+      servoAngle = commandCache[i].toInt();
+      Serial.println(servoAngle);
+      servo[servoNum].write(servoAngle);
+      commandCache[i] = "";
     }
-    else if(commamdCache[i].length() == 10){//內建好的動作
+    else if(commandCache[i].length() == 10){//內建好的動作
       
     }
     else commandCache[i] = "";
     //可能在傳輸中出錯而不符合規定的指令，直接丟棄
   }
 }
-void debug() {
+void printInputCommand() {
   for (int i = 0; i < 20; i++) {
     if (commandCache[i] != "") {
       Serial.println(commandCache[i]);
-      commandCache[i] = "";
-      Serial.print(commandCache[i].length());//輸出字串長度
+      //Serial.print(commandCache[i].length());//輸出字串長度
+      //commandCache[i] = "";
     }
   }
 }

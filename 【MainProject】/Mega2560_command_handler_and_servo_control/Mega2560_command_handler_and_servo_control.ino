@@ -22,9 +22,8 @@ void setup() {
 //======================================================
 void loop() {
   communicateWithNodeMCU();//-----------與Wifi通訊區塊-----------
-  debug();
-  commandToServoInfo();
-  servoMove();
+  printInputCommand();
+  servoMove();//同時也把指令解析功能包含進去了!
 }
 //======================================================
 /*接線說明(左側為NodeMCU,右側為Mega大陸版)
