@@ -38,12 +38,23 @@ void servoMove(){
       servoAngle = commandCache[i].toInt();
       Serial.println(servoAngle);
       servo[servoNum].write(servoAngle);
-      commandCache[i] = "";
+      commandCache[i] = "";//清空指令已表示完成
     }
     else if(commandCache[i].length() == 10){//內建好的動作
       commandCache[i].remove(0,7);
       commandNum = commandCache[i].toInt();
-      
+      switch(commandNum){
+        case 1:
+          
+          break;
+        case 2:
+          
+          break;
+        default:
+          //do nothing
+          break;
+      }
+      commandCache[i] = "";//清空指令已表示完成
     }
     else commandCache[i] = "";
     //可能在傳輸中出錯而不符合規定的指令，直接丟棄
