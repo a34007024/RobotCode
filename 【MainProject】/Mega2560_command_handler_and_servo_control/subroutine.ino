@@ -20,6 +20,7 @@ void servoMove(){
   String stringProcessCache;
   int servoNum = 0;
   int servoAngle = 0;
+  int commandNum = 0;
   for(int i=0;i<15;i++){
     /*Servo02_angle000這樣為一個符合規範的組合指令
      * 字串的長度為16
@@ -40,6 +41,8 @@ void servoMove(){
       commandCache[i] = "";
     }
     else if(commandCache[i].length() == 10){//內建好的動作
+      commandCache[i].remove(0,7);
+      commandNum = commandCache[i].toInt();
       
     }
     else commandCache[i] = "";
