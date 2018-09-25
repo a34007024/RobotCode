@@ -33,7 +33,7 @@ void servoMove(){
     if(commandCache[i].length() == 16){//組合指令
       
     }
-    else if(commamdCache[i]){//內建好的動作
+    else if(commamdCache[i].length() == 10){//內建好的動作
       
     }
     else commandCache[i] = "";
