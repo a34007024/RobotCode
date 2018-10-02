@@ -1,5 +1,4 @@
-# RobotCode
-# 高三專題的程式碼存放區
+# RobotCode (高三專題的程式碼存放區)
 # Arduiono IDE esp8266的套件
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
