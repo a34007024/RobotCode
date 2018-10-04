@@ -5,16 +5,20 @@ https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 
 https://www.arduino.cc/en/Reference/SoftwareSerial
 
-藍芽自走車:
+# 藍芽自走車:
 https://yunlinsong.blogspot.com/2016/09/arduino_15.html
 
-Esp8266 github 很實用的文件
+# Esp8266 github 很實用的文件
 https://github.com/esp8266/Arduino/tree/master/libraries
 裡面有許多Esp8266的Examples
 
-關於機器人聲控
-有人利用AppInventor+NodeMCU做出了聲控遙控車
-https://www.instructables.com/id/WiFi-Voice-Controlled-Robot-With-NodeMCU/
+# 關於機器人聲控
++ 有人利用AppInventor+NodeMCU做出了聲控遙控車
++ https://www.instructables.com/id/WiFi-Voice-Controlled-Robot-With-NodeMCU/
+
+# nodemcuWifi遙控車
++ https://www.instructables.com/id/Simple-WiFi-Controlled-RC-Car/
++ https://www.youtube.com/watch?v=2AL7HfiRlp4
 
 nodemcu 官方github
 https://github.com/nodemcu/nodemcu-firmware
