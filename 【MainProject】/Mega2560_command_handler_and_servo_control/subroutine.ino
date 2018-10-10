@@ -57,6 +57,33 @@ void servoMove(){
         case 4://向後移動
           
           break;
+        case 101://左側拳
+          
+          break;
+        case 102://右側拳
+          
+          break;
+        case 201://左拳
+          
+          break;
+        case 202://右拳
+          
+          break;
+        case 301://左上勾拳
+          
+          break;
+        case 302://右上勾拳
+          
+          break;
+        case 401://往前倒下爬起
+          
+          break;
+        case 402://往後倒下爬起
+          
+          break;
+        case 999://電量顯示
+          
+          break;
         default:
           //do nothing
           break;
