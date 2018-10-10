@@ -5,6 +5,7 @@ void communicateWithNodeMCU() {
       //use '' because the dataType of incomingByte is char
       //don't be foolish again xD! QwQ我好傻一開始竟然用""難怪沒反應
       //===========解析指令字串並分割============
+      //指令範例: $Servo02_angle000. 從$開始.結束
       for (int i = 0; i < 20; i++) {
         if (commandCache[i] == "") { //判斷哪一個指令快取陣列為空
           commandCache[i] = Serial1.readStringUntil('.');//將新指令加到指令快取
@@ -22,7 +23,7 @@ void servoMove(){
   int servoAngle = 0;
   int commandNum = 0;
   for(int i=0;i<15;i++){
-    /*Servo02_angle000這樣為一個符合規範的組合指令
+    /* Servo02_angle000這樣為一個符合規範的組合指令
      * 字串的長度為16
      * 而已訂好的指令都規定為(Mega板上已寫好的預設功能)
      * command001、command002......字串長度為10
@@ -44,10 +45,16 @@ void servoMove(){
       commandCache[i].remove(0,7);
       commandNum = commandCache[i].toInt();
       switch(commandNum){
-        case 1:
+        case 1://向左移動
           
           break;
-        case 2:
+        case 2://向右移動
+          
+          break;
+        case 3://向前移動
+          
+          break;
+        case 4://向後移動
           
           break;
         default:
