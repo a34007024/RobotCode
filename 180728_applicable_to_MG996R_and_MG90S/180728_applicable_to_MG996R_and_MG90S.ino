@@ -2,10 +2,10 @@
 #include <Servo.h>
 Servo testServo;
 void setup() {
-  testServo.attach(9,1000,2150);
-  //指定為Pin9,脈波寬度範圍為1000us~2150us
+  testServo.attach(9,975,2150);
+  //指定為Pin9,脈波寬度範圍為975us~2150us
   //伺服馬達文件寫(0.5ms~2.5ms = 500us~2500us)
-  //但是我們測出來的脈波範圍為1000us~2150us
+  //但是我們測出來的脈波範圍為975us~2150us
   while(testServo.attached()==false){
     delay(500);//等待馬達連接
   }
