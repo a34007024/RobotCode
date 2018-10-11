@@ -1,8 +1,8 @@
 /*下一步從client class 與server class 著手
  以及從範例裡去找相關的傳輸資料的方法*/
 #include <ESP8266WiFi.h>
-const char* ssid = "Infas_因法師"; //your WiFi Name
-const char* password = "infas.capacitor";  //Your Wifi Password
+const char* ssid = "RobotController-EZ"; //your WiFi Name
+const char* password = "robot.wifiControl";  //Your Wifi Password
 WiFiServer server(80);
 WiFiClient client;
 int servo1Angle = 30;
