@@ -81,8 +81,24 @@ void servoMove(){
         case 402://往後倒下爬起
           
           break;
-        case 999://電量顯示
+        case 501://面向左邊(移動角度大)
+
+          break;
+        case 502://面向左邊(移動角度小)
+
+          break;
+        case 511://面向右邊(移動角度大)
+
+          break;
+        case 512://面向右邊(移動角度小)
           
+          break;
+        case 600://蹲下
+
+          break;
+        case 999://電量顯示
+          //do nothing
+          //交給NodeMCU處理
           break;
         default:
           //do nothing
