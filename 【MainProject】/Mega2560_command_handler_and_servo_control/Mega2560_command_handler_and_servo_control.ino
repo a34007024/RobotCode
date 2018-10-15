@@ -6,8 +6,8 @@ int servoAngle[15];
 Servo servo[15];
 //======================================================
 //=========用來把伺服馬達指派成方便判別的變數============
-Servo LeftHand = servo[0];
-
+Servo 
+Servo 
 //=========用來把伺服馬達指派成方便判別的變數============
 //======================================================
 void setup() {
@@ -18,10 +18,10 @@ void setup() {
     commandCache[i] = "";//初始化指令陣列
   }
   for(int i=0;i<15;i++){
-    if(i==0)servo[i].attach(44,1000,2150);
-    else if(i==1)servo[i].attach(45,1000,2150);
-    else if(i==14)servo[i].attach(46,1000,2150);
-    else servo[i].attach(i,1000,2150);
+    if(i==0)servo[i].attach(44,975,2150);
+    else if(i==1)servo[i].attach(45,975,2150);
+    else if(i==2)servo[i].attach(46,975,2150);
+    else servo[i].attach(i,975,2150);
   }//伺服馬達Pin腳接線
 }
 //======================================================
