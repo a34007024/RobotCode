@@ -13,20 +13,6 @@ void setup(){
   robotComponents[16].write(90);
   delay(2000);
   for(int i=2;i<14;i++){
-    robotComponents[i].write(0);
-  }
-  for(int i=44;i<47;i++){
-    robotComponents[i].write(0);
-  }
-  delay(2000);
-  for(int i=2;i<14;i++){
-    robotComponents[i].write(180);
-  }
-  for(int i=44;i<47;i++){
-    robotComponents[i].write(180);
-  }
-  delay(2000);
-  for(int i=2;i<14;i++){
     robotComponents[i].write(90);
   }
   for(int i=44;i<47;i++){
