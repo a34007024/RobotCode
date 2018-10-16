@@ -9,6 +9,7 @@ int servo1Angle = 30;
 String request;
 //===========================================
 void setup() {
+  pinMode(A0,INPUT);
   Serial.begin(115200);
   sendWifiInfoToSerial();
   //初始化Wifi連線功能及開啟序列埠通訊

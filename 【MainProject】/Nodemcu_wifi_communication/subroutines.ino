@@ -21,10 +21,10 @@ void sendWifiInfoToSerial(){
   Serial.print(WiFi.localIP());//顯示出這塊板子的IP位置
   Serial.println("/"); 
 }
-
+int BatteryVoltage = 0;
 void matchRequest(){
-  if(request.indexOf("/Servo1_angle90") != -1)  {
-    //Servo1.write(90);
+  if(request.indexOf("/$command999.") != -1)  {
+    BatteryVoltage = analogRead(A0);
   }
 }
 
@@ -37,6 +37,7 @@ void sendHTML(){
   client.println("<!DOCTYPE HTML>");
   client.println("<html>");
   //-------------以上為HTML Header----------------
+  client.println(BatteryVoltage);
   client.print("Led is now: This example does not have LED");
   client.println("<br><br>");
   client.println("<input type=\"submit\" value=\"submit\" />");
