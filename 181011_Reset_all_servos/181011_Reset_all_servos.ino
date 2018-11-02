@@ -15,13 +15,6 @@ void setup(){
   robotComponents[14].write(90);
   robotComponents[15].write(90);
   robotComponents[16].write(90);
-  delay(500);
-  for(int i=2;i<14;i++){
-    robotComponents[i].write(90);
-  }
-  for(int i=44;i<47;i++){
-    robotComponents[i].write(90);
-  }
 }
 
 void loop(){
