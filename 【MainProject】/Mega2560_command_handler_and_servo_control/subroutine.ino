@@ -110,6 +110,30 @@ void servoMove(){
     //可能在傳輸中出錯而不符合規定的指令，直接丟棄
   }
 }
+
+void startUpResetServos(){
+  Waist.write(90);
+  delay(1000);
+  LeftShoulderX.write(90);
+  LeftShoulderY.write(90);
+  LeftElbow.write(90);
+  delay(2000);
+  RightShoulderX.write(90);
+  RightShoulderY.write(90);
+  RightElbow.write(90);
+  delay(2000);
+  LeftPelvisX.write(90);
+  LeftThighY.write(90);
+  LeftKnee.write(90);
+  LeftAnkle.write(90);
+  delay(2000);
+  RightPelvisX.write(90);
+  RightThighY.write(90);
+  RightKnee.write(90);
+  RightAnkle.write(90);
+  delay(2000);
+}
+
 void printInputCommand() {
   for (int i = 0; i < 20; i++) {
     if (commandCache[i] != "") {
