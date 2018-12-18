@@ -29,7 +29,7 @@ void setup(){
     else servo[i].attach(i-1, 975, 2150);
   }//伺服馬達Pin腳接線
   for (int i = 0; i < 15; i++) {//初始蹲下
-    servo[i].write(0);
+    servo[i].write(10);
   }
   ms = millis();
   prems = ms;
@@ -41,7 +41,7 @@ void setup(){
 void loop(){
   ms = millis();
   if(ms-prems<3000){
-    for(int angle=0;angle<=90;angle++){//起立
+    for(int angle=10;angle<=90;angle++){//起立
       LeftThighY.write(angle);
       LeftKnee.write(angle);
       RightThighY.write(angle);
@@ -52,7 +52,7 @@ void loop(){
     }
   }
   else if(ms-prems>3000){
-    for(int angle=90;angle>0;angle--){//蹲下
+    for(int angle=90;angle>10;angle--){//蹲下
       LeftThighY.write(angle);
       LeftKnee.write(angle);
       RightThighY.write(angle);
