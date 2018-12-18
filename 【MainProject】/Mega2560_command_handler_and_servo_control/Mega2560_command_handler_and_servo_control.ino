@@ -6,21 +6,21 @@ int servoAngle[15];
 Servo servo[15];
 //======================================================
 //=========用來把伺服馬達指派成方便判別的變數============
-Servo LeftShoulderX	=	servo[0] ;
-Servo LeftShoulderY	=	servo[1] ;
-Servo LeftElbow		  =	servo[2] ;
-Servo RightShoulderX =	servo[3] ;
-Servo RightShoulderY =	servo[4] ;
-Servo RightElbow	  =	servo[5] ;
-Servo LeftPelvisX	  =	servo[6] ;
-Servo LeftThighY	  =	servo[7] ;
-Servo LeftKnee		  =	servo[8] ;
-Servo LeftAnkle		  =	servo[9] ;
-Servo RightPelvisX	=	servo[10] ;
-Servo RightThighY	  =	servo[11] ;
-Servo RightKnee		  =	servo[12] ;
-Servo RightAnkle	  =	servo[13] ;
-Servo Waist			=	servo[14] ;
+Servo LeftShoulderX   =	servo[0] ;
+Servo LeftShoulderY	  =	servo[1] ;
+Servo LeftElbow		    =	servo[2] ;
+Servo RightShoulderX  =	servo[3] ;
+Servo RightShoulderY  =	servo[4] ;
+Servo RightElbow	      =	servo[5] ;
+Servo LeftPelvisX	    =	servo[6] ;
+Servo LeftThighY	      =	servo[7] ;
+Servo LeftKnee		      =	servo[8] ;
+Servo LeftAnkle		    =	servo[9] ;
+Servo RightPelvisX	    =	servo[10] ;
+Servo RightThighY	    =	servo[11] ;
+Servo RightKnee		    =	servo[12] ;
+Servo RightAnkle	      =	servo[13] ;
+Servo Waist			      =	servo[14] ;
 //=========用來把伺服馬達指派成方便判別的變數============
 //======================================================
 void setup() {
