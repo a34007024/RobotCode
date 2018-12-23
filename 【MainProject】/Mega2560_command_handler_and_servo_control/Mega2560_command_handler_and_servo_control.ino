@@ -2,7 +2,7 @@
 char incomingByte;   // for incoming serial data
 String stringIn;
 String commandCache[20];
-int servoAngle[15];
+int servoAngle[15];//儲存每顆馬達的角度
 Servo servo[15];
 //======================================================
 //=========用來把伺服馬達指派成方便判別的變數============
@@ -36,13 +36,14 @@ void setup() {
     else if (i == 2)servo[i].attach(46, 975, 2150);
     else servo[i].attach(i - 1, 975, 2150);
   }//伺服馬達Pin腳接線
+  startUpResetServos();
 }
 //======================================================
 void loop() {
-  startUpResetServos();
   communicateWithNodeMCU();//-----------與Wifi通訊區塊-----------
-  printInputCommand();
-  servoMove();//同時也把指令解析功能包含進去了!
+  printInputCommand();//輸出debug訊息用
+  processCommand();//將指令轉為可執行的數據
+  servoMove();//依照儲存的馬達角度控制伺服馬達
 }
 //======================================================
 /*接線說明(左側為NodeMCU,右側為Mega大陸版)
