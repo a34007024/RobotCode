@@ -155,9 +155,7 @@ void printInputCommand() {//輸出debug訊息用
 }
 
 void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控制指令
-  for(int owo=0;owo<9;owo++){
-    
-  }
+  
 }
 
 
