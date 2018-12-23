@@ -38,7 +38,11 @@ void processCommand() { //將指令轉為可執行的數據
       commandCache[i].remove(0, 13);
       servoAngleCache = commandCache[i].toInt();
       Serial.println(servoAngleCache);
-      servoAngle[servoNumCache] = servoAngleCache;//存放要求的角度，等待後面servoMove()執行
+      if(servoNumCache>=0 && servoNumCache<=14){//組合指令簡易防呆
+        if(servoAngleCache>=0 && servoAngleCache <=180){
+          servoAngle[servoNumCache] = servoAngleCache;//存放要求的角度，等待後面servoMove()執行
+        }
+      }
       commandCache[i] = "";//清空指令已表示完成
     }
     else if (commandCache[i].length() == 10) { //內建好的動作
