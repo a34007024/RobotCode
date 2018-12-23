@@ -17,84 +17,84 @@ void communicateWithNodeMCU() {//-----------與Wifi通訊區塊-----------
   }
 }
 
-void processCommand(){//將指令轉為可執行的數據
+void processCommand() { //將指令轉為可執行的數據
   String stringProcessCache;
   int servoNumCache = 0;   //暫存指令指定控制的馬達編號
   int servoAngleCache = 0; //暫存指令指定控制的馬達角度
   int commandNumCache = 0; //暫存指令要求執行的內建動作編號
-  for(int i=0;i<15;i++){
+  for (int i = 0; i < 15; i++) {
     /* Servo02_angle000這樣為一個符合規範的組合指令
-     * 字串的長度為16
-     * 而已訂好的指令都規定為(Mega板上已寫好的預設功能)
-     * command001、command002......字串長度為10
-     */
-    if(commandCache[i].length() == 16){//組合指令
+       字串的長度為16
+       而已訂好的指令都規定為(Mega板上已寫好的預設功能)
+       command001、command002......字串長度為10
+    */
+    if (commandCache[i].length() == 16) { //組合指令
       stringProcessCache = commandCache[i];
       //字串是char array第一個字元為char[0]
-      stringProcessCache.remove(0,5);//從第0格開始，共去除5個字元
-      stringProcessCache.remove(2,9);//從第2格開始，共去除9個字元
+      stringProcessCache.remove(0, 5); //從第0格開始，共去除5個字元
+      stringProcessCache.remove(2, 9); //從第2格開始，共去除9個字元
       servoNumCache = stringProcessCache.toInt();
       Serial.println(servoNumCache);
-      commandCache[i].remove(0,13);
+      commandCache[i].remove(0, 13);
       servoAngleCache = commandCache[i].toInt();
       Serial.println(servoAngleCache);
       servoAngle[servoNumCache] = servoAngleCache;//存放要求的角度，等待後面servoMove()執行
       commandCache[i] = "";//清空指令已表示完成
     }
-    else if(commandCache[i].length() == 10){//內建好的動作
-      commandCache[i].remove(0,7);
+    else if (commandCache[i].length() == 10) { //內建好的動作
+      commandCache[i].remove(0, 7);
       commandNumCache = commandCache[i].toInt();
-      switch(commandNumCache){
+      switch (commandNumCache) {
         case 1://向左移動
-          
+
           break;
         case 2://向右移動
-          
+
           break;
         case 3://向前移動
-          
+
           break;
         case 4://向後移動
-          
+
           break;
         case 101://左側拳
-          
+
           break;
         case 102://右側拳
-          
+
           break;
         case 201://左拳
-          
+
           break;
         case 202://右拳
-          
+
           break;
         case 301://左上勾拳
-          
+
           break;
         case 302://右上勾拳
-          
+
           break;
         case 401://往前倒下爬起
-          
+
           break;
         case 402://往後倒下爬起
-          
+
           break;
         case 501://面向左邊(移動角度大)
-          
+
           break;
         case 502://面向左邊(移動角度小)
-          
+
           break;
         case 511://面向右邊(移動角度大)
-          
+
           break;
         case 512://面向右邊(移動角度小)
-          
+
           break;
         case 600://蹲下
-          
+
           break;
         case 999://電量顯示
           //do nothing
@@ -111,14 +111,14 @@ void processCommand(){//將指令轉為可執行的數據
   }
 }
 
-void servoMove(){//依照儲存的馬達角度控制伺服馬達
-  for(int i=0;i<15;i++){
+void servoMove() { //依照儲存的馬達角度控制伺服馬達
+  for (int i = 0; i < 15; i++) {
     servo[i].write(servoAngle[i]);
   }
 }
 
-void startUpResetServos(){
-  for(int i=0;i<15;i++){
+void startUpResetServos() {
+  for (int i = 0; i < 15; i++) {
     servoAngle[i] = 90;
     //初始化所有馬達角度位置
   }
@@ -154,5 +154,10 @@ void printInputCommand() {//輸出debug訊息用
   }
 }
 
+void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控制指令
+  for(int owo=0;owo<9;owo++){
+    
+  }
+}
 
 

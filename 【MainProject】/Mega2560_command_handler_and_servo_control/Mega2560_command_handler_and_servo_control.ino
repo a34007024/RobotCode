@@ -44,6 +44,7 @@ void loop() {
   printInputCommand();//輸出debug訊息用
   processCommand();//將指令轉為可執行的數據
   servoMove();//依照儲存的馬達角度控制伺服馬達
+  sendControlCommandViaSerialPort();{//debug用，透過監控視窗發送控制指令
 }
 //======================================================
 /*接線說明(左側為NodeMCU,右側為Mega大陸版)
