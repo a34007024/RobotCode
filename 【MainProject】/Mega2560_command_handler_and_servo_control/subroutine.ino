@@ -154,8 +154,36 @@ void printInputCommand() {//輸出debug訊息用
   }
 }
 
+char comPortIncomingByte;//電腦通訊用
+String comServoNum;
+String comServoAngle;
+int comNum = -1;
+int comAngle = -1;
 void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控制指令
-  
+  //電腦用指令看起來像這樣 => s9 a80<=結尾按Enter換行
+  if(Serial.available()){
+    comPortIncomingByte = Serial.read();
+    if(comPortIncomingByte == 's'){
+      comServoNum = Serial.readStringUntil(' ');
+      comNum = comServoNum.toInt();
+      Serial.println("GetNum:" + comServoNum);
+    }
+    else if(comPortIncomingByte == 'a'){
+      comServoAngle = Serial.readStringUntil('\r');
+      comAngle = comServoAngle.toInt();
+      Serial.println("GetAngle:" + comServoAngle);
+    }
+  }
+  if(comNum >=0 && comNum <=14){//指令防呆處理
+    if(comAngle >=0 && comAngle<=180){
+      servoAngle[comNum] = comAngle;
+      Serial.println("recorded!");//確定已經紀錄
+      comNum = -1;
+      comAngle = -1;
+    }
+  }
+  else{
+    comNum = -1;
+    comAngle = -1;
+  }
 }
-
-
