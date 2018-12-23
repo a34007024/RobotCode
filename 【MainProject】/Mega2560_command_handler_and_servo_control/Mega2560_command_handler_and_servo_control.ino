@@ -34,7 +34,7 @@ void setup() {
     if (i == 0)servo[i].attach(44, 975, 2150);
     else if (i == 1)servo[i].attach(45, 975, 2150);
     else if (i == 2)servo[i].attach(46, 975, 2150);
-    else servo[i].attach(i-1, 975, 2150);
+    else servo[i].attach(i - 1, 975, 2150);
   }//伺服馬達Pin腳接線
 }
 //======================================================

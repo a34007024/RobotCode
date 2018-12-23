@@ -2,7 +2,7 @@ void communicateWithNodeMCU() {
   if (Serial1.available()) { //如果Serial 1(wifi板)有送訊號出來
     incomingByte = Serial1.read();//讀取Serial 1接收到的資料
     if (incomingByte == '$') {
-      //use '' because the dataType of incomingByte is char
+      //use '' because the dataType of incomingByte is char <= 是字元!
       //don't be foolish again xD! QwQ我好傻一開始竟然用""難怪沒反應
       //===========解析指令字串並分割============
       //指令範例: $Servo02_angle000. 從$開始.結束
