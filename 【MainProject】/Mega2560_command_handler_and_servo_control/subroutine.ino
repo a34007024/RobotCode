@@ -38,8 +38,8 @@ void processCommand() { //將指令轉為可執行的數據
       commandCache[i].remove(0, 13);
       servoAngleCache = commandCache[i].toInt();
       Serial.println(servoAngleCache);
-      if(servoNumCache>=0 && servoNumCache<=14){//組合指令簡易防呆
-        if(servoAngleCache>=0 && servoAngleCache <=180){
+      if (servoNumCache >= 0 && servoNumCache <= 14) { //組合指令簡易防呆
+        if (servoAngleCache >= 0 && servoAngleCache <= 180) {
           servoAngle[servoNumCache] = servoAngleCache;//存放要求的角度，等待後面servoMove()執行
         }
       }
@@ -159,35 +159,45 @@ void printInputCommand() {//輸出debug訊息用
 }
 
 char comPortIncomingByte;//電腦通訊用
+String comInputCache[20];
 String comServoNum;
 String comServoAngle;
 int comNum = -1;
 int comAngle = -1;
 void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控制指令
-  //電腦用指令看起來像這樣 => s9 a80<=結尾按Enter換行
-  if(Serial.available()){
+  //電腦用指令看起來像這樣 => s09a080<=結尾按Enter換行
+  while(Serial.available()) {//一次吃完所有指令
     comPortIncomingByte = Serial.read();
-    if(comPortIncomingByte == 's'){
-      comServoNum = Serial.readStringUntil(' ');
-      comNum = comServoNum.toInt();
-      Serial.println("GetNum:" + comServoNum);
-    }
-    else if(comPortIncomingByte == 'a'){
-      comServoAngle = Serial.readStringUntil('\r');
-      comAngle = comServoAngle.toInt();
-      Serial.println("GetAngle:" + comServoAngle);
-    }
-  }
-  if(comNum >=0 && comNum <=14){//指令防呆處理
-    if(comAngle >=0 && comAngle<=180){
-      servoAngle[comNum] = comAngle;
-      Serial.println("recorded!");//確定已經紀錄
-      comNum = -1;
-      comAngle = -1;
+    if (comPortIncomingByte == 's') {
+      for (int i = 0; i < 20; i++) {
+        if (comInputCache[i] == "") { //判斷哪一個指令快取陣列為空
+          comInputCache[i] = Serial.readStringUntil('.');//將新指令加到指令快取
+          Serial.println(comInputCache[i]);
+          break;//離開for迴圈繼續讀取COM送入的資料
+        }
+      }
     }
   }
-  else{
-    comNum = -1;
-    comAngle = -1;
+  String stringProcessCache;
+  int servoNumCache = 0;   //暫存指令指定控制的馬達編號
+  int servoAngleCache = 0; //暫存指令指定控制的馬達角度
+  int commandNumCache = 0; //暫存指令要求執行的內建動作編號
+  for (int i = 0; i < 15; i++) {
+    if (comInputCache[i].length() == 6) { //組合指令
+      stringProcessCache = comInputCache[i];
+      //字串是char array第一個字元為char[0]
+      stringProcessCache.remove(2, 4); //從第2格開始，共去除4個字元
+      servoNumCache = stringProcessCache.toInt();
+      Serial.println(servoNumCache);
+      comInputCache[i].remove(0, 3);
+      servoAngleCache = comInputCache[i].toInt();
+      Serial.println(servoAngleCache);
+      if (servoNumCache >= 0 && servoNumCache <= 14) { //組合指令簡易防呆
+        if (servoAngleCache >= 0 && servoAngleCache <= 180) {
+          servoAngle[servoNumCache] = servoAngleCache;//存放要求的角度，等待後面servoMove()執行
+        }
+      }
+      comInputCache[i] = "";//清空指令已表示完成
+    }
   }
 }
