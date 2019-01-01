@@ -7,10 +7,15 @@ WiFiServer server(80);
 WiFiClient client;
 int servo1Angle = 30;
 String request;
+const int ServosPowerRelayPin = D3;//D3
 //===========================================
 void setup() {
+  pinMode(ServosPowerRelayPin,OUTPUT);
+  digitalWrite(ServosPowerRelayPin,HIGH);
   pinMode(A0,INPUT);
   Serial.begin(115200);
+  delay(3000);
+  digitalWrite(ServosPowerRelayPin,LOW);//低態驅動Relay
   sendWifiInfoToSerial();
   //初始化Wifi連線功能及開啟序列埠通訊
 }
