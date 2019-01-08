@@ -1,25 +1,11 @@
 /*下一步從client class 與server class 著手
  以及從範例裡去找相關的傳輸資料的方法*/
 #include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <ESP8266WebServer.h>
-#include <ESP8266mDNS.h>
-#include <ESP8266HTTPUpdateServer.h>
-
-#ifndef STASSID
-#define STASSID "RobotController-EZ"
-#define STAPSK  "robot.wifiControl"
-#endif
-
-const char* host = "esp8266-webupdate";//更新網址的hostname
-const char* ssid = STASSID; //your WiFi Name(要更改到上方更改)
-const char* password = STAPSK;  //Your Wifi Password(要更改到上方更改)
-
+const char* ssid = "RobotController-EZ"; //your WiFi Name
+const char* password = "robot.wifiControl";  //Your Wifi Password
 WiFiServer server(80);
 WiFiClient client;
-ESP8266WebServer httpServer(80);
-ESP8266HTTPUpdateServer httpUpdater;
-
+int servo1Angle = 30;
 String request;
 const int ServosPowerRelayPin = D3;//D3
 //===========================================
@@ -30,13 +16,11 @@ void setup() {
   Serial.begin(115200);
   delay(3000);
   digitalWrite(ServosPowerRelayPin,LOW);//低態驅動Relay
-  sendWifiInfoToSerial_and_OpenServer();
-  //初始化Wifi連線功能、開啟序列埠通訊及網頁伺服器
+  sendWifiInfoToSerial();
+  //初始化Wifi連線功能及開啟序列埠通訊
 }
 //==========================================
 void loop() {
-  httpServer.handleClient();  //處理更新用的服務
-  MDNS.update();            //處理更新用的服務
   while (WiFi.status() != WL_CONNECTED) {//如果斷線
     delay(100);
     Serial.println("Lost Connection! Trying to reconnect...");

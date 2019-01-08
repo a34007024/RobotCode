@@ -1,12 +1,10 @@
-void sendWifiInfoToSerial_and_OpenServer(){
+void sendWifiInfoToSerial(){
   Serial.begin(115200);
   delay(10); 
   Serial.println();
   Serial.println();
-  Serial.println("Booting Wifi System...");
   Serial.print("Connecting to ");
-  Serial.println(ssid);
-  WiFi.mode(WIFI_AP_STA); 
+  Serial.println(ssid); 
   WiFi.begin(ssid, password);//嘗試連線到設定好的SSID
   while (WiFi.status() != WL_CONNECTED) {
     //判斷是否成功連線
@@ -17,13 +15,6 @@ void sendWifiInfoToSerial_and_OpenServer(){
   Serial.println("");
   Serial.println("WiFi connected"); 
   server.begin();//開啟伺服器
-  MDNS.begin(host);//開啟hostname
-
-  httpUpdater.setup(&httpServer);//開啟透過網頁更新firmware的服務
-  httpServer.begin();
-
-  MDNS.addService("http", "tcp", 80);
-  
   Serial.println("Server started");
   Serial.print("Use this URL to connect: ");
   Serial.print("http://");
