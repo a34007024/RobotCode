@@ -136,14 +136,14 @@ void startUpResetServos() {
   RightShoulderY.write(90);
   RightElbow.write(90);
   //delay(2000);
-  LeftPelvisX.write(90);
-  LeftThighY.write(90);
-  LeftKnee.write(90);
+  LeftPelvisX.write(110);
+  LeftThighY.write(0);
+  LeftKnee.write(180);
   LeftAnkle.write(90);
   //delay(2000);
-  RightPelvisX.write(90);
-  RightThighY.write(90);
-  RightKnee.write(90);
+  RightPelvisX.write(100);
+  RightThighY.write(0);
+  RightKnee.write(180);
   RightAnkle.write(90);
   //delay(2000);
 }
