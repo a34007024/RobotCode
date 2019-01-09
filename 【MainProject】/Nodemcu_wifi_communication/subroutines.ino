@@ -17,12 +17,12 @@ void sendWifiInfoToSerial_and_OpenServer(){
   Serial.println("");
   Serial.println("WiFi connected"); 
   server.begin();//開啟伺服器
-  MDNS.begin(host);//開啟hostname
+  //MDNS.begin(host);//開啟hostname
 
-  httpUpdater.setup(&httpServer);//開啟透過網頁更新firmware的服務
-  httpServer.begin();
+  //httpUpdater.setup(&httpServer);//開啟透過網頁更新firmware的服務
+  //httpServer.begin();
 
-  MDNS.addService("http", "tcp", 80);
+  //MDNS.addService("http", "tcp", 80);
   
   Serial.println("Server started");
   Serial.print("Use this URL to connect: ");

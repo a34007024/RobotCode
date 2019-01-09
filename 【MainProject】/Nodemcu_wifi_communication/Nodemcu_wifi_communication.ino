@@ -2,9 +2,9 @@
  以及從範例裡去找相關的傳輸資料的方法*/
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <ESP8266WebServer.h>
-#include <ESP8266mDNS.h>
-#include <ESP8266HTTPUpdateServer.h>
+//#include <ESP8266WebServer.h>
+//#include <ESP8266mDNS.h>
+//#include <ESP8266HTTPUpdateServer.h>
 
 #ifndef STASSID
 #define STASSID "RobotController-EZ"
@@ -17,8 +17,8 @@ const char* password = STAPSK;  //Your Wifi Password(要更改到上方更改)
 
 WiFiServer server(80);
 WiFiClient client;
-ESP8266WebServer httpServer(88);
-ESP8266HTTPUpdateServer httpUpdater;
+//ESP8266WebServer httpServer(88);
+//ESP8266HTTPUpdateServer httpUpdater;
 
 String request;
 const int ServosPowerRelayPin = D3;//D3
@@ -34,8 +34,8 @@ void setup() {
 }
 //==========================================
 void loop() {
-  httpServer.handleClient();  //處理更新用的服務
-  MDNS.update();            //處理更新用的服務
+  //httpServer.handleClient();  //處理更新用的服務
+  //MDNS.update();            //處理更新用的服務
   while (WiFi.status() != WL_CONNECTED) {//如果斷線
     delay(100);
     Serial.println("Lost Connection! Trying to reconnect...");
