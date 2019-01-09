@@ -1,6 +1,6 @@
 void sendWifiInfoToSerial_and_OpenServer(){
   Serial.begin(115200);
-  delay(10); 
+  delay(100);
   Serial.println();
   Serial.println();
   Serial.println("Booting Wifi System...");
@@ -46,10 +46,10 @@ void sendHTML(){
   client.println("<!DOCTYPE HTML>");
   client.println("<html>");
   //-------------以上為HTML Header----------------
+  client.println("Battery Read:");
   client.println(BatteryVoltage);
-  client.print("Led is now: This example does not have LED");
   client.println("<br><br>");
-  client.println("<input type=\"submit\" value=\"submit\" />");
+  client.println("<a href=\":88/update\"\"><button style=\"height:200px;width:200px\">Go to update page</button></a><br />");
   client.println("<a href=\"/$Servo02_angle180.$Servo03_angle150.$Servo05_angle080.$Servo06_angle020.$Servo07_angle180.$Servo08_angle180.$Servo09_angle180.$Servo10_angle180.$Servo11_angle180.$Servo12_angle180.$Servo13_angle180.\"\"><button style=\"height:200px;width:200px\">complex command test</button></a><br />");  
   client.println("<a href=\"/$Servo01_angle000.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 0°</button></a><br /><br /><br />");  
   client.println("<a href=\"/$Servo01_angle180.\"\"><button style=\"height:200px;width:200px\">Servo1 set to 180°</button></a><br />");  

@@ -17,7 +17,7 @@ const char* password = STAPSK;  //Your Wifi Password(要更改到上方更改)
 
 WiFiServer server(80);
 WiFiClient client;
-ESP8266WebServer httpServer(80);
+ESP8266WebServer httpServer(88);
 ESP8266HTTPUpdateServer httpUpdater;
 
 String request;
@@ -27,7 +27,6 @@ void setup() {
   pinMode(ServosPowerRelayPin,OUTPUT);
   digitalWrite(ServosPowerRelayPin,LOW);
   pinMode(A0,INPUT);
-  Serial.begin(115200);
   delay(3000);
   digitalWrite(ServosPowerRelayPin,HIGH);//高態驅動Relay
   sendWifiInfoToSerial_and_OpenServer();
