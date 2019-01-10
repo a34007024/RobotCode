@@ -50,19 +50,19 @@ void processCommand() { //將指令轉為可執行的數據
       commandNumCache = commandCache[i].toInt();
       switch (commandNumCache) {
         case 1://向左移動
-
+          
           break;
         case 2://向右移動
-
+          
           break;
         case 3://向前移動
-
+          
           break;
         case 4://向後移動
-
+          
           break;
         case 101://左側拳
-
+          
           break;
         case 102://右側拳
 
@@ -124,7 +124,13 @@ void servoMove() { //依照儲存的馬達角度控制伺服馬達
 void startUpResetServos() {
   for (int i = 0; i < 15; i++) {
     servoAngle[i] = 90;
-    //初始化所有馬達角度位置
+    if(i == 6)servoAngle[i] = 110;
+    if(i == 7)servoAngle[i] = 0;
+    if(i == 8)servoAngle[i] = 180;
+    if(i == 10)servoAngle[i] = 100;
+    if(i == 11)servoAngle[i] = 0;
+    if(i == 12)servoAngle[i] = 180;
+    //初始化所有馬達角度位置為復歸狀態
   }
   Waist.write(90);
   //delay(1000);
