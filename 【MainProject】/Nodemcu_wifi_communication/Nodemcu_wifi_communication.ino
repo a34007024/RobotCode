@@ -25,10 +25,10 @@ const int ServosPowerRelayPin = D3;//D3
 //===========================================
 void setup() {
   pinMode(ServosPowerRelayPin,OUTPUT);
-  digitalWrite(ServosPowerRelayPin,LOW);
+  digitalWrite(ServosPowerRelayPin,HIGH);
   pinMode(A0,INPUT);
   delay(3000);
-  digitalWrite(ServosPowerRelayPin,HIGH);//高態驅動Relay
+  digitalWrite(ServosPowerRelayPin,LOW);//高態驅動Relay
   sendWifiInfoToSerial_and_OpenServer();
   //初始化Wifi連線功能、開啟序列埠通訊及網頁伺服器
 }
