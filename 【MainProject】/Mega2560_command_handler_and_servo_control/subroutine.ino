@@ -4,7 +4,7 @@ void servoMove() { //依照儲存的馬達角度控制伺服馬達
   }
 }
 
-void startUpResetServos() {
+void resetServos() {
   for (int i = 0; i < 15; i++) {
     servoAngle[i] = 90;
     if (i == 6)servoAngle[i] = 110;
@@ -15,26 +15,6 @@ void startUpResetServos() {
     if (i == 12)servoAngle[i] = 180;
     //初始化所有馬達角度位置為復歸狀態
   }
-  Waist.write(90);
-  //delay(1000);
-  LeftShoulderX.write(90);
-  LeftShoulderY.write(90);
-  LeftElbow.write(90);
-  //delay(2000);
-  RightShoulderX.write(90);
-  RightShoulderY.write(90);
-  RightElbow.write(90);
-  //delay(2000);
-  LeftPelvisX.write(110);
-  LeftThighY.write(0);
-  LeftKnee.write(180);
-  LeftAnkle.write(90);
-  //delay(2000);
-  RightPelvisX.write(100);
-  RightThighY.write(0);
-  RightKnee.write(180);
-  RightAnkle.write(90);
-  //delay(2000);
 }
 
 void communicateWithNodeMCU() {//-----------與Wifi通訊區塊-----------

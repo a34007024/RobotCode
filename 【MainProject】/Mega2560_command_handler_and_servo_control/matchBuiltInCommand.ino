@@ -1,4 +1,4 @@
-void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial port共用的內建動作指令 
+void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial port共用的內建動作指令
   switch (processedCommandNumber) {//經過字串處理的指令號碼
     case 1://向左移動
 
@@ -28,7 +28,44 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
 
       break;
     case 302://右上勾拳
-
+      for (int i = 0; i < 15; i++) {//更改馬達角度
+        if (i == 0)  servoAngle[i] = 135 ;
+        if (i == 1)  servoAngle[i] = 90 ;
+        if (i == 2)  servoAngle[i] = 90 ;
+        if (i == 3)  servoAngle[i] = 45 ;
+        if (i == 4)  servoAngle[i] = 25 ;
+        if (i == 5)  servoAngle[i] = 80 ;
+        if (i == 6)  servoAngle[i] = 110 ;
+        if (i == 7)  servoAngle[i] = 0 ;
+        if (i == 8)  servoAngle[i] = 180 ;
+        if (i == 9)  servoAngle[i] = 90 ;
+        if (i == 10) servoAngle[i] = 100 ;
+        if (i == 11) servoAngle[i] = 0 ;
+        if (i == 12) servoAngle[i] = 180 ;
+        if (i == 13) servoAngle[i] = 90 ;
+        if (i == 14) servoAngle[i] = 90 ;
+      }
+      servoMove();
+      delay(100);
+      for (int i = 0; i < 15; i++) {//更改馬達角度
+        if (i == 0)  servoAngle[i] = 135 ;
+        if (i == 1)  servoAngle[i] = 90 ;
+        if (i == 2)  servoAngle[i] = 90 ;
+        if (i == 3)  servoAngle[i] = 180 ;
+        if (i == 4)  servoAngle[i] = 25 ;
+        if (i == 5)  servoAngle[i] = 80 ;
+        if (i == 6)  servoAngle[i] = 110 ;
+        if (i == 7)  servoAngle[i] = 0 ;
+        if (i == 8)  servoAngle[i] = 180 ;
+        if (i == 9)  servoAngle[i] = 90 ;
+        if (i == 10) servoAngle[i] = 100 ;
+        if (i == 11) servoAngle[i] = 0 ;
+        if (i == 12) servoAngle[i] = 180 ;
+        if (i == 13) servoAngle[i] = 90 ;
+        if (i == 14) servoAngle[i] = 120 ;
+      }
+      delay(500);
+      resetServos();
       break;
     case 401://往前倒下爬起
 
