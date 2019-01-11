@@ -15,6 +15,7 @@ void resetServos() {
     if (i == 12)servoAngle[i] = 180;
     //初始化所有馬達角度位置為復歸狀態
   }
+  servoMove();
 }
 
 void communicateWithNodeMCU() {//-----------與Wifi通訊區塊-----------
