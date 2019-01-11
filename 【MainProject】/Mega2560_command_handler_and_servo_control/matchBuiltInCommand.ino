@@ -64,7 +64,8 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
         if (i == 13) servoAngle[i] = 90 ;
         if (i == 14) servoAngle[i] = 120 ;
       }
-      delay(500);
+      servoMove();
+      delay(1000);
       resetServos();
       break;
     case 401://往前倒下爬起

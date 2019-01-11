@@ -97,7 +97,7 @@ void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控�
   //電腦用指令看起來像這樣 => s09a080<=結尾按Enter換行
   while (Serial.available()) { //一次吃完所有指令
     comPortIncomingByte = Serial.read();
-    if (comPortIncomingByte == 's') {
+    if (comPortIncomingByte == 's' || comPortIncomingByte == 'c') {
       for (int i = 0; i < 20; i++) {
         if (comInputCache[i] == "") { //判斷哪一個指令快取陣列為空
           comInputCache[i] = Serial.readStringUntil('.');//將新指令加到指令快取
@@ -126,12 +126,14 @@ void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控�
           servoAngle[servoNumCache] = servoAngleCache;//存放要求的角度，等待後面servoMove()執行
         }
       }
-      comInputCache[i] = "";//清空指令已表示完成
     }
     else if(comInputCache[i].length() == 3){//呼叫內建動作指令
-      //Serial 呼叫內建動作指令範例:101為左側拳(直接打指令的編號，但要湊齊3位數如001、002)
+      //Serial 呼叫內建動作指令範例:c101.為左側拳(直接打指令的編號，但要湊齊3位數如c001.、c002.)
       commandNumCache = comInputCache[i].toInt();
+      
       matchBuiltInCommandRequest(commandNumCache);
+      
     }
+    comInputCache[i] = "";//清空指令已表示完成
   }
 }
