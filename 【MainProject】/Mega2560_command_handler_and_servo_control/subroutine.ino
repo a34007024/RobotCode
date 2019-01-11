@@ -48,70 +48,76 @@ void processCommand() { //將指令轉為可執行的數據
     else if (commandCache[i].length() == 10) { //內建好的動作
       commandCache[i].remove(0, 7);
       commandNumCache = commandCache[i].toInt();
-      switch (commandNumCache) {
-        case 1://向左移動
-          
-          break;
-        case 2://向右移動
-          
-          break;
-        case 3://向前移動
-          
-          break;
-        case 4://向後移動
-          
-          break;
-        case 101://左側拳
-          
-          break;
-        case 102://右側拳
-
-          break;
-        case 201://左拳
-
-          break;
-        case 202://右拳
-
-          break;
-        case 301://左上勾拳
-
-          break;
-        case 302://右上勾拳
-
-          break;
-        case 401://往前倒下爬起
-
-          break;
-        case 402://往後倒下爬起
-
-          break;
-        case 501://面向左邊(移動角度大)
-
-          break;
-        case 502://面向左邊(移動角度小)
-
-          break;
-        case 511://面向右邊(移動角度大)
-
-          break;
-        case 512://面向右邊(移動角度小)
-
-          break;
-        case 600://蹲下
-
-          break;
-        case 999://電量顯示
-          //do nothing
-          //交給NodeMCU處理
-          break;
-        default:
-          //do nothing
-          break;
-      }
+      
+      matchBuiltInCommandRequest(commandNumCache);//呼叫內建動作指令
+      
       commandCache[i] = "";//清空指令已表示完成
     }
     else commandCache[i] = "";
     //可能在傳輸中出錯而不符合規定的指令，直接丟棄
+  }
+}
+
+void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial port共用的內建動作指令 
+  switch (processedCommandNumber) {//經過字串處理的指令號碼
+    case 1://向左移動
+
+      break;
+    case 2://向右移動
+
+      break;
+    case 3://向前移動
+
+      break;
+    case 4://向後移動
+
+      break;
+    case 101://左側拳
+
+      break;
+    case 102://右側拳
+
+      break;
+    case 201://左拳
+
+      break;
+    case 202://右拳
+
+      break;
+    case 301://左上勾拳
+
+      break;
+    case 302://右上勾拳
+
+      break;
+    case 401://往前倒下爬起
+
+      break;
+    case 402://往後倒下爬起
+
+      break;
+    case 501://面向左邊(移動角度大)
+
+      break;
+    case 502://面向左邊(移動角度小)
+
+      break;
+    case 511://面向右邊(移動角度大)
+
+      break;
+    case 512://面向右邊(移動角度小)
+
+      break;
+    case 600://蹲下
+
+      break;
+    case 999://電量顯示
+      //do nothing
+      //交給NodeMCU處理
+      break;
+    default:
+      //do nothing
+      break;
   }
 }
 
@@ -124,12 +130,12 @@ void servoMove() { //依照儲存的馬達角度控制伺服馬達
 void startUpResetServos() {
   for (int i = 0; i < 15; i++) {
     servoAngle[i] = 90;
-    if(i == 6)servoAngle[i] = 110;
-    if(i == 7)servoAngle[i] = 0;
-    if(i == 8)servoAngle[i] = 180;
-    if(i == 10)servoAngle[i] = 100;
-    if(i == 11)servoAngle[i] = 0;
-    if(i == 12)servoAngle[i] = 180;
+    if (i == 6)servoAngle[i] = 110;
+    if (i == 7)servoAngle[i] = 0;
+    if (i == 8)servoAngle[i] = 180;
+    if (i == 10)servoAngle[i] = 100;
+    if (i == 11)servoAngle[i] = 0;
+    if (i == 12)servoAngle[i] = 180;
     //初始化所有馬達角度位置為復歸狀態
   }
   Waist.write(90);
@@ -172,7 +178,7 @@ int comNum = -1;
 int comAngle = -1;
 void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控制指令
   //電腦用指令看起來像這樣 => s09a080<=結尾按Enter換行
-  while(Serial.available()) {//一次吃完所有指令
+  while (Serial.available()) { //一次吃完所有指令
     comPortIncomingByte = Serial.read();
     if (comPortIncomingByte == 's') {
       for (int i = 0; i < 20; i++) {
@@ -204,6 +210,11 @@ void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控�
         }
       }
       comInputCache[i] = "";//清空指令已表示完成
+    }
+    else if(comInputCache[i].length() == 3){//呼叫內建動作指令
+      //Serial 呼叫內建動作指令範例:101為左側拳(直接打指令的編號，但要湊齊3位數如001、002)
+      commandNumCache = comInputCache[i].toInt();
+      matchBuiltInCommandRequest(commandNumCache);
     }
   }
 }
