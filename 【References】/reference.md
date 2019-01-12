@@ -1,3 +1,6 @@
+# 極為詳細、強大的Esp8266教學文章!!!(分類成好幾堂課!)
++ https://www.arduino.cn/thread-81478-1-1.html
+
 # 重要: arduino字串處理function
 + https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 參考此頁底下的Fuctions項目
