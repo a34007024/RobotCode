@@ -1,4 +1,5 @@
 void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial port共用的內建動作指令
+  //把改馬達角度的指令包在for迴圈裡是為了方便摺疊區段程式碼，以利檢視
   switch (processedCommandNumber) {//經過字串處理的指令號碼
     case 1://向左移動
 
@@ -132,11 +133,68 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
       delay(1000);
       resetServos();
       break;
-    case 201://左拳
+    case 201://左直拳
 
       break;
-    case 202://右拳
-
+    case 202://右直拳
+      for (int i = 0; i < 15; i++) {//更改馬達角度
+        if (i == 0)  servoAngle[i] = 135   ;
+        if (i == 1)  servoAngle[i] = 90   ;
+        if (i == 2)  servoAngle[i] = 90   ;
+        if (i == 3)  servoAngle[i] = 45   ;
+        if (i == 4)  servoAngle[i] = 90   ;
+        if (i == 5)  servoAngle[i] = 90   ;
+        if (i == 6)  servoAngle[i] = 110  ;
+        if (i == 7)  servoAngle[i] = 0    ;
+        if (i == 8)  servoAngle[i] = 180  ;
+        if (i == 9)  servoAngle[i] = 90   ;
+        if (i == 10) servoAngle[i] = 100  ;
+        if (i == 11) servoAngle[i] = 0    ;
+        if (i == 12) servoAngle[i] = 180  ;
+        if (i == 13) servoAngle[i] = 90   ;
+        if (i == 14) servoAngle[i] = 90   ;
+      }
+      servoMove();
+      delay(200);
+      for (int i = 0; i < 15; i++) {//更改馬達角度
+        if (i == 0)  servoAngle[i] = 135   ;
+        if (i == 1)  servoAngle[i] = 90   ;
+        if (i == 2)  servoAngle[i] = 110  ;
+        if (i == 3)  servoAngle[i] = 45   ;
+        if (i == 4)  servoAngle[i] = 90   ;
+        if (i == 5)  servoAngle[i] = 0    ;
+        if (i == 6)  servoAngle[i] = 110  ;
+        if (i == 7)  servoAngle[i] = 0    ;
+        if (i == 8)  servoAngle[i] = 180  ;
+        if (i == 9)  servoAngle[i] = 90   ;
+        if (i == 10) servoAngle[i] = 100  ;
+        if (i == 11) servoAngle[i] = 0    ;
+        if (i == 12) servoAngle[i] = 180  ;
+        if (i == 13) servoAngle[i] = 90   ;
+        if (i == 14) servoAngle[i] = 15   ;
+      }
+      servoMove();
+      delay(200);
+      for (int i = 0; i < 15; i++) {//更改馬達角度
+        if (i == 0)  servoAngle[i] = 135   ;
+        if (i == 1)  servoAngle[i] = 130  ;
+        if (i == 2)  servoAngle[i] = 180  ;
+        if (i == 3)  servoAngle[i] = 180  ;
+        if (i == 4)  servoAngle[i] = 70   ;
+        if (i == 5)  servoAngle[i] = 180  ;
+        if (i == 6)  servoAngle[i] = 110  ;
+        if (i == 7)  servoAngle[i] = 0    ;
+        if (i == 8)  servoAngle[i] = 180  ;
+        if (i == 9)  servoAngle[i] = 90   ;
+        if (i == 10) servoAngle[i] = 100  ;
+        if (i == 11) servoAngle[i] = 0    ;
+        if (i == 12) servoAngle[i] = 180  ;
+        if (i == 13) servoAngle[i] = 90   ;
+        if (i == 14) servoAngle[i] = 145  ;
+      }
+      servoMove();
+      delay(1000);
+      resetServos();
       break;
     case 301://左上勾拳
       for (int i = 0; i < 15; i++) {//更改馬達角度
