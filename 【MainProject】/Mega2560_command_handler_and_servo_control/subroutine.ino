@@ -18,6 +18,27 @@ void resetServos() {
   servoMove();
 }
 
+void standUp() {//站直
+  for (int i = 0; i < 15; i++) {//更改馬達角度
+    if (i == 0)  servoAngle[i] = 135  ;
+    if (i == 1)  servoAngle[i] = 90   ;
+    if (i == 2)  servoAngle[i] = 90   ;
+    if (i == 3)  servoAngle[i] = 45   ;
+    if (i == 4)  servoAngle[i] = 90   ;
+    if (i == 5)  servoAngle[i] = 90   ;
+    if (i == 6)  servoAngle[i] = 110  ;
+    if (i == 7)  servoAngle[i] = 120  ;
+    if (i == 8)  servoAngle[i] = 70   ;
+    if (i == 9)  servoAngle[i] = 90   ;
+    if (i == 10) servoAngle[i] = 100  ;
+    if (i == 11) servoAngle[i] = 130  ;
+    if (i == 12) servoAngle[i] = 40   ;
+    if (i == 13) servoAngle[i] = 90   ;
+    if (i == 14) servoAngle[i] = 90   ;
+  }
+  servoMove();
+}
+
 void communicateWithNodeMCU() {//-----------與Wifi通訊區塊-----------
   if (Serial1.available()) { //如果Serial 1(wifi板)有送訊號出來
     incomingByte = Serial1.read();//讀取Serial 1接收到的資料
@@ -68,9 +89,9 @@ void processCommand() { //將Wifi接受到的指令轉為可執行的數據
     else if (commandCache[i].length() == 10) { //內建好的動作
       commandCache[i].remove(0, 7);
       commandNumCache = commandCache[i].toInt();
-      
+
       matchBuiltInCommandRequest(commandNumCache);//呼叫內建動作指令
-      
+
       commandCache[i] = "";//清空指令已表示完成
     }
     else commandCache[i] = "";
@@ -128,12 +149,12 @@ void sendControlCommandViaSerialPort() { //debug用,透過監控視窗發送控�
         }
       }
     }
-    else if(comInputCache[i].length() == 3){//呼叫內建動作指令
+    else if (comInputCache[i].length() == 3) { //呼叫內建動作指令
       //Serial 呼叫內建動作指令範例:c101.為左側拳(直接打指令的編號，但要湊齊3位數如c001.、c002.)
       commandNumCache = comInputCache[i].toInt();
-      
+
       matchBuiltInCommandRequest(commandNumCache);
-      
+
     }
     comInputCache[i] = "";//清空指令已表示完成
   }
