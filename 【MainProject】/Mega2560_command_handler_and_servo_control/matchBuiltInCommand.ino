@@ -8,10 +8,12 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
 
       break;
     case 3://向前移動
-      standUp();
+      resetServos();
       servoMove();
-      delay(1000);
-      for (int i = 0; i < 15; i++) {//更改馬達角度
+      halfSquat();//半蹲
+      servoMove();
+      delay(300);
+      for (int i = 0; i < 15; i++) {//更改馬達角度(出左腳)
         if (i == 0)  servoAngle[i] = 135  ;
         if (i == 1)  servoAngle[i] = 90   ;
         if (i == 2)  servoAngle[i] = 90   ;
@@ -19,18 +21,21 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
         if (i == 4)  servoAngle[i] = 90   ;
         if (i == 5)  servoAngle[i] = 90   ;
         if (i == 6)  servoAngle[i] = 110  ;
-        if (i == 7)  servoAngle[i] = 60   ;
-        if (i == 8)  servoAngle[i] = 70   ;
+        if (i == 7)  servoAngle[i] = 5    ;
+        if (i == 8)  servoAngle[i] = 85   ;
         if (i == 9)  servoAngle[i] = 90   ;
         if (i == 10) servoAngle[i] = 100  ;
         if (i == 11) servoAngle[i] = 130  ;
-        if (i == 12) servoAngle[i] = 40   ;
+        if (i == 12) servoAngle[i] = 135  ;
         if (i == 13) servoAngle[i] = 90   ;
         if (i == 14) servoAngle[i] = 90   ;
       }
       servoMove();
-      delay(200);
-      for (int i = 0; i < 15; i++) {//更改馬達角度
+      delay(300);
+      halfSquat();//半蹲
+      servoMove();
+      delay(300);
+      for (int i = 0; i < 15; i++) {//更改馬達角度(出右腳)
         if (i == 0)  servoAngle[i] = 135  ;
         if (i == 1)  servoAngle[i] = 90   ;
         if (i == 2)  servoAngle[i] = 90   ;
@@ -38,39 +43,20 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
         if (i == 4)  servoAngle[i] = 90   ;
         if (i == 5)  servoAngle[i] = 90   ;
         if (i == 6)  servoAngle[i] = 110  ;
-        if (i == 7)  servoAngle[i] = 60   ;
-        if (i == 8)  servoAngle[i] = 70   ;
+        if (i == 7)  servoAngle[i] = 135  ;
+        if (i == 8)  servoAngle[i] = 140  ;
         if (i == 9)  servoAngle[i] = 90   ;
         if (i == 10) servoAngle[i] = 100  ;
-        if (i == 11) servoAngle[i] = 130  ;
-        if (i == 12) servoAngle[i] = 100  ;
+        if (i == 11) servoAngle[i] = 0    ;
+        if (i == 12) servoAngle[i] = 70   ;
         if (i == 13) servoAngle[i] = 90   ;
         if (i == 14) servoAngle[i] = 90   ;
       }
       servoMove();
-      delay(200);
-      for (int i = 0; i < 15; i++) {//更改馬達角度
-        if (i == 0)  servoAngle[i] = 135  ;
-        if (i == 1)  servoAngle[i] = 90   ;
-        if (i == 2)  servoAngle[i] = 90   ;
-        if (i == 3)  servoAngle[i] = 45   ;
-        if (i == 4)  servoAngle[i] = 90   ;
-        if (i == 5)  servoAngle[i] = 90   ;
-        if (i == 6)  servoAngle[i] = 110  ;
-        if (i == 7)  servoAngle[i] = 120  ;
-        if (i == 8)  servoAngle[i] = 70   ;
-        if (i == 9)  servoAngle[i] = 90   ;
-        if (i == 10) servoAngle[i] = 100  ;
-        if (i == 11) servoAngle[i] = 130  ;
-        if (i == 12) servoAngle[i] = 100  ;
-        if (i == 13) servoAngle[i] = 90   ;
-        if (i == 14) servoAngle[i] = 90   ;
-      }
+      delay(300);
+      halfSquat();//半蹲
       servoMove();
-      delay(200);
-      standUp();
-      servoMove();
-      delay(200);
+      delay(300);
       break;
     case 4://向後移動
 
