@@ -442,8 +442,19 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
     case 512://面向右邊(移動角度小)
 
       break;
-    case 600://蹲下
-
+    case 601://蹲下
+      resetServos();
+      servoMove();
+      break;
+    case 602://站立
+      standUp();
+      servoMove();
+      break;
+    case 701://謝幕-1
+      
+      break;
+    case 702://謝幕-2
+      
       break;
     case 999://電量顯示
       //do nothing
