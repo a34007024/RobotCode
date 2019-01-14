@@ -79,7 +79,7 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
         if (i == 1)  servoAngle[i] = 90   ;
         if (i == 2)  servoAngle[i] = 90   ;
         if (i == 3)  servoAngle[i] = 45   ;
-        if (i == 4)  servoAngle[i] = 25   ;
+        if (i == 4)  servoAngle[i] = 40   ;
         if (i == 5)  servoAngle[i] = 80   ;
         if (i == 6)  servoAngle[i] = 110  ;
         if (i == 7)  servoAngle[i] = 0    ;
@@ -96,7 +96,7 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
       for (int i = 0; i < 15; i++) {//更改馬達角度
         if (i == 0)  servoAngle[i] = 135  ;
         if (i == 1)  servoAngle[i] = 90   ;
-        if (i == 2)  servoAngle[i] = 90   ;
+        if (i == 2)  servoAngle[i] = 180  ;
         if (i == 3)  servoAngle[i] = 180  ;
         if (i == 4)  servoAngle[i] = 25   ;
         if (i == 5)  servoAngle[i] = 155  ;
@@ -108,16 +108,16 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
         if (i == 11) servoAngle[i] = 0    ;
         if (i == 12) servoAngle[i] = 180  ;
         if (i == 13) servoAngle[i] = 90   ;
-        if (i == 14) servoAngle[i] = 90   ;
+        if (i == 14) servoAngle[i] = 140  ;
       }
       servoMove();
       delay(200);
       for (int i = 0; i < 15; i++) {//更改馬達角度
         if (i == 0)  servoAngle[i] = 135  ;
         if (i == 1)  servoAngle[i] = 90   ;
-        if (i == 2)  servoAngle[i] = 90   ;
+        if (i == 2)  servoAngle[i] = 90  ;
         if (i == 3)  servoAngle[i] = 180  ;
-        if (i == 4)  servoAngle[i] = 105  ;
+        if (i == 4)  servoAngle[i] = 105   ;
         if (i == 5)  servoAngle[i] = 155  ;
         if (i == 6)  servoAngle[i] = 110  ;
         if (i == 7)  servoAngle[i] = 0    ;
@@ -127,7 +127,7 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
         if (i == 11) servoAngle[i] = 0    ;
         if (i == 12) servoAngle[i] = 180  ;
         if (i == 13) servoAngle[i] = 90   ;
-        if (i == 14) servoAngle[i] = 90   ;
+        if (i == 14) servoAngle[i] = 75   ;
       }
       servoMove();
       delay(1000);
