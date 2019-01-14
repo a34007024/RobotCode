@@ -20,7 +20,7 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
         if (i == 5)  servoAngle[i] = 90   ;
         if (i == 6)  servoAngle[i] = 110  ;
         if (i == 7)  servoAngle[i] = 0    ;
-        if (i == 8)  servoAngle[i] = 130  ;
+        if (i == 8)  servoAngle[i] = 140  ;
         if (i == 9)  servoAngle[i] = 90   ;
         if (i == 10) servoAngle[i] = 100  ;
         if (i == 11) servoAngle[i] = 40   ;
