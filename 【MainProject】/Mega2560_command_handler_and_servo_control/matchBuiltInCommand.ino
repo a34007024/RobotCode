@@ -451,9 +451,9 @@ void matchBuiltInCommandRequest(int processedCommandNumber) {//wifi與Serial por
       servoMove();
       break;
     case 701://謝幕-1
-      resetServos();
+      standUp();
       servoMove();
-      delay(200);
+      delay(500);
       for (int i = 0; i < 15; i++) {//更改馬達角度(謝幕開始)
         if (i == 0)  servoAngle[i] = 135  ;
         if (i == 1)  servoAngle[i] = 0  ;
